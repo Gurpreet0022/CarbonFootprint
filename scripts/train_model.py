@@ -54,8 +54,8 @@ for model_name, model in models.items():
         'R2 Score':round(r2,3)
     }
     
-# Save the model
-joblib.dump(model, f"models/{model_name}.joblib")
+    # Save the model
+    joblib.dump(model, f"models/{model_name}.joblib")
     
 # Print results
 print("Model Performance on Test Set:\n")
