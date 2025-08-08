@@ -30,7 +30,7 @@ heating_map = {'coal': 0, 'wood': 1, 'natural gas': 2, 'electricity': 3}
 transport_map = {'walk/bicycle': 0, 'public': 1, 'private': 2}
 vehicle_type_map = {'no_vehicle':0,'petrol': 1, 'diesel': 3, 'lpg': 2, 'hybrid': 5, 'electric': 4}
 waste_bag_size_map = {'small': 0, 'medium': 1, 'large': 2 ,'extra large':3}
-
+travel_map = {'never': 0, 'rarely': 1, 'occasionally': 2, 'frequently': 3, 'very frequently': 4}
 
 # Map categorical features to numerical values
 df['Body Type'] = df['Body Type'].map(body_map)
@@ -41,6 +41,7 @@ df['Heating Energy Source'] = df['Heating Energy Source'].map(heating_map)
 df['Transport'] = df['Transport'].map(transport_map)
 df['Vehicle Type'] = df['Vehicle Type'].map(vehicle_type_map)  
 df['Waste Bag Size'] = df['Waste Bag Size'].map(waste_bag_size_map)
+df['Frequency of Traveling by Air'] = df['Frequency of Traveling by Air'].map(travel_map)
 
 # Convert stringified lists into python lists
 df['Recycling'] = df['Recycling'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else [])
@@ -57,7 +58,7 @@ df = pd.concat([df.drop('Cooking_With', axis=1), cooking_encoded], axis=1)
 
 
 # One Hot Encoding 
-df = pd.get_dummies(df, columns=['Sex','Social Activity','Frequency of Traveling by Air','Energy efficiency',
+df = pd.get_dummies(df, columns=['Sex','Social Activity','Energy efficiency',
                     ],drop_first=True)
 
 
