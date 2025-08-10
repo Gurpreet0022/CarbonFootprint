@@ -74,6 +74,13 @@ df[numerical_features] = scaler.fit_transform(df[numerical_features])
 import joblib
 joblib.dump(scaler, 'scaler.pkl')
 scaler = joblib.load('scaler.pkl')
+joblib.dump(mlb_recycle, 'mlb_recycle.pkl')
+joblib.dump(mlb_cooking, 'mlb_cooking.pkl')
+mlb_recycle = joblib.load('mlb_recycle.pkl')
+mlb_cooking = joblib.load('mlb_cooking.pkl')
+
+
+
 
 # Multicollinearity 
 # There's no multicollinearity because two features have a correlation coefficient > 0.8 or < -0.8, 
