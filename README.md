@@ -87,7 +87,7 @@ CarbonFootprint/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/carboncurve.git
+   git clone https://github.com/Gurpreet0022/carboncurve.git
    cd carboncurve
 2. **Install dependencies**
    ```bash
